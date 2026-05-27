@@ -2,9 +2,9 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Shriniwas Alle — Specialist Automation Engineer</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shriniwas Alle - Senior QA Engineer II</title>
     <style>
         * {
             margin: 0;
@@ -12,650 +12,604 @@
             box-sizing: border-box;
         }
 
-        html {
-            scroll-behavior: smooth;
-        }
-
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: #0f172a;
-            color: #e2e8f0;
-            min-height: 100%;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
         }
 
-        a {
-            color: inherit;
-            text-decoration: none;
-        }
-
-        .page {
+        .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 24px 60px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
         }
 
-        .hero {
-            position: relative;
-            min-height: 90vh;
-            display: flex;
-            align-items: center;
-            padding: 40px 0 80px;
-            background: radial-gradient(circle at top left, rgba(96, 165, 250, 0.12), transparent 30%),
-                linear-gradient(180deg, #071421 0%, #111827 100%);
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: radial-gradient(circle at top right, rgba(168, 85, 247, 0.16), transparent 26%),
-                radial-gradient(circle at bottom left, rgba(14, 165, 233, 0.12), transparent 24%);
-            pointer-events: none;
-        }
-
-        .hero-inner {
-            position: relative;
-            width: 100%;
-            display: grid;
-            grid-template-columns: 1.2fr 0.8fr;
-            gap: 40px;
-            align-items: center;
-        }
-
-        .hero-copy {
-            max-width: 680px;
-            z-index: 1;
-        }
-
-        .eyebrow {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            font-size: 0.95rem;
-            color: #60a5fa;
-            margin-bottom: 18px;
-        }
-
-        .eyebrow::before {
-            content: '•';
-        }
-
-        .hero-copy h1 {
-            font-size: clamp(2.6rem, 4vw, 4rem);
-            line-height: 1.02;
-            margin-bottom: 20px;
-            color: #f8fafc;
-        }
-
-        .hero-copy p {
-            font-size: 1.05rem;
-            max-width: 680px;
-            margin-bottom: 32px;
-            color: #cbd5e1;
-            line-height: 1.75;
-        }
-
-        .hero-actions {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 16px;
-        }
-
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 48px;
-            padding: 0 20px;
-            border-radius: 999px;
-            font-weight: 600;
-            transition: transform 0.25s ease, background-color 0.25s ease;
-        }
-
-        .btn:hover {
-            transform: translateY(-1px);
-        }
-
-        .btn-primary {
-            background: #2563eb;
-            color: #f8fafc;
-        }
-
-        .btn-secondary {
-            background: rgba(255, 255, 255, 0.08);
-            color: #f8fafc;
-            border: 1px solid rgba(255, 255, 255, 0.12);
-        }
-
-        .hero-meta {
-            display: grid;
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-            gap: 16px;
-            margin-top: 40px;
-            z-index: 1;
-        }
-
-        .hero-card {
-            background: rgba(15, 23, 42, 0.9);
-            border: 1px solid rgba(148, 163, 184, 0.12);
-            border-radius: 24px;
-            padding: 24px;
-            box-shadow: 0 30px 80px rgba(15, 23, 42, 0.35);
-        }
-
-        .hero-card h3 {
-            color: #fff;
-            margin-bottom: 10px;
-            font-size: 0.95rem;
-        }
-
-        .hero-card p {
-            color: #94a3b8;
-            line-height: 1.8;
-            font-size: 0.95rem;
-        }
-
-        .hero-stats {
-            display: grid;
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-            gap: 16px;
-            margin-top: 24px;
-        }
-
-        .stat {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(148, 163, 184, 0.12);
-            border-radius: 20px;
-            padding: 20px;
+        .header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 40px;
             text-align: center;
         }
 
-        .stat strong {
-            display: block;
-            font-size: 1.75rem;
-            color: #f8fafc;
-            margin-bottom: 8px;
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
         }
 
-        .stat span {
-            display: block;
-            color: #94a3b8;
+        .header .title {
+            font-size: 1.3em;
+            font-weight: 300;
+            margin-bottom: 20px;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+            padding-bottom: 15px;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            font-size: 0.95em;
+        }
+
+        .contact-info a {
+            color: #fff;
+            text-decoration: none;
+            transition: opacity 0.3s;
+        }
+
+        .contact-info a:hover {
+            opacity: 0.8;
+        }
+
+        .content {
+            padding: 40px;
         }
 
         .section {
-            margin-top: 80px;
+            margin-bottom: 40px;
         }
 
         .section-title {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            color: #60a5fa;
-            font-size: 0.92rem;
-            letter-spacing: 0.16em;
-            text-transform: uppercase;
-            margin-bottom: 18px;
+            font-size: 1.8em;
+            color: #1e3c72;
+            margin-bottom: 25px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #667eea;
+            font-weight: 600;
         }
 
-        .section-title::before {
-            content: '//';
-            opacity: 0.7;
+        .profile-section {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
         }
 
-        .section-heading {
-            font-size: clamp(2rem, 3vw, 2.75rem);
-            max-width: 760px;
-            color: #f8fafc;
-            margin-bottom: 18px;
-            line-height: 1.05;
-        }
-
-        .section-copy {
-            color: #cbd5e1;
-            max-width: 780px;
-            line-height: 1.8;
-            margin-bottom: 32px;
-        }
-
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1.2fr 0.8fr;
-            gap: 30px;
-        }
-
-        .about-panel {
-            display: grid;
-            gap: 20px;
-        }
-
-        .panel-card {
-            background: #111827;
-            border: 1px solid rgba(148, 163, 184, 0.12);
-            border-radius: 24px;
-            padding: 28px;
-            box-shadow: 0 25px 60px rgba(15, 23, 42, 0.25);
-        }
-
-        .panel-card h3 {
-            margin-bottom: 16px;
-            color: #f8fafc;
-            font-size: 1rem;
-        }
-
-        .panel-card ul {
-            display: grid;
-            gap: 12px;
+        .profile-section ul {
             list-style: none;
             padding: 0;
-            color: #cbd5e1;
-            line-height: 1.8;
         }
 
-        .panel-card li {
+        .profile-section li {
+            margin-bottom: 12px;
+            padding-left: 25px;
             position: relative;
-            padding-left: 22px;
         }
 
-        .panel-card li::before {
-            content: '▹';
+        .profile-section li:before {
+            content: "✓";
             position: absolute;
             left: 0;
-            color: #60a5fa;
-            font-size: 0.9rem;
+            color: #667eea;
+            font-weight: bold;
         }
 
-        .tags {
+        .experience-item {
+            margin-bottom: 30px;
+            padding-bottom: 25px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .experience-item:last-child {
+            border-bottom: none;
+        }
+
+        .job-header {
             display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 10px;
             flex-wrap: wrap;
-            gap: 10px;
-            margin-top: 16px;
         }
 
-        .tag {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: rgba(96, 165, 250, 0.12);
-            color: #93c5fd;
-            border-radius: 999px;
-            padding: 10px 14px;
-            font-size: 0.9rem;
+        .job-title {
+            font-size: 1.2em;
+            font-weight: 600;
+            color: #1e3c72;
         }
 
-        .skill-grid {
+        .company {
+            color: #667eea;
+            font-weight: 500;
+        }
+
+        .date {
+            color: #666;
+            font-size: 0.95em;
+            font-style: italic;
+        }
+
+        .project-info {
+            margin: 12px 0;
+            color: #555;
+        }
+
+        .tech-stack {
+            color: #764ba2;
+            font-size: 0.9em;
+            margin: 8px 0;
+        }
+
+        .job-description {
+            list-style: none;
+            padding: 15px 0;
+        }
+
+        .job-description li {
+            margin-bottom: 8px;
+            padding-left: 20px;
+            position: relative;
+            color: #555;
+        }
+
+        .job-description li:before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: #667eea;
+        }
+
+        .skills-grid {
             display: grid;
-            grid-template-columns: repeat(3, minmax(0, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 20px;
         }
 
-        .skill-card {
-            background: #111827;
-            border: 1px solid rgba(148, 163, 184, 0.12);
-            border-radius: 24px;
-            padding: 26px;
-            display: grid;
-            gap: 18px;
+        .skill-category {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
         }
 
-        .skill-card h3 {
-            color: #f8fafc;
-            font-size: 1.05rem;
+        .skill-category h3 {
+            color: #1e3c72;
             margin-bottom: 12px;
+            font-size: 1em;
         }
 
-        .skill-card p,
-        .project-card p,
-        .experience-card p {
-            color: #cbd5e1;
-            line-height: 1.7;
+        .skill-category p {
+            color: #555;
+            font-size: 0.9em;
+            line-height: 1.8;
         }
 
-        .skill-list {
+        .achievements {
             display: grid;
-            gap: 10px;
-            list-style: none;
-            padding: 0;
-            font-size: 0.95rem;
-            color: #cbd5e1;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
         }
 
-        .skill-list li::before {
-            content: '•';
-            margin-right: 10px;
-            color: #60a5fa;
+        .achievement-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.2);
         }
 
-        .projects-grid,
-        .experience-grid {
+        .achievement-card h3 {
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+
+        .education {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+        }
+
+        .education h3 {
+            color: #1e3c72;
+            margin-bottom: 8px;
+        }
+
+        .education p {
+            color: #666;
+            margin: 5px 0;
+        }
+
+        .additional-skills {
             display: grid;
-            gap: 24px;
-            grid-template-columns: repeat(2, minmax(0, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
         }
 
-        .project-card,
-        .experience-card {
-            background: #111827;
-            border: 1px solid rgba(148, 163, 184, 0.12);
-            border-radius: 24px;
-            padding: 28px;
-            box-shadow: 0 20px 55px rgba(15, 23, 42, 0.2);
+        .skill-box {
+            background: white;
+            border: 2px solid #e0e0e0;
+            padding: 20px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
         }
 
-        .project-card h3,
-        .experience-card h3 {
-            color: #f8fafc;
-            margin-bottom: 14px;
-            font-size: 1.15rem;
+        .skill-box:hover {
+            border-color: #667eea;
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.1);
         }
 
-        .project-card small,
-        .experience-card small {
-            color: #94a3b8;
-            display: inline-block;
-            margin-bottom: 12px;
+        .skill-box h3 {
+            color: #1e3c72;
+            margin-bottom: 10px;
+            font-size: 1.05em;
         }
 
-        .badge {
-            display: inline-flex;
-            gap: 8px;
-            align-items: center;
-            font-size: 0.95rem;
-            color: #cbd5e1;
-            margin-top: 16px;
-        }
-
-        .badge span {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            min-width: 30px;
-            min-height: 30px;
-            border-radius: 999px;
-            background: rgba(96, 165, 250, 0.16);
-            color: #93c5fd;
-            font-size: 0.95rem;
-        }
-
-        .experience-card ul {
-            list-style: none;
-            padding: 0;
-            margin-top: 16px;
-            display: grid;
-            gap: 10px;
-            color: #cbd5e1;
-        }
-
-        .experience-card li::before {
-            content: '▸';
-            margin-right: 10px;
-            color: #60a5fa;
+        .skill-box p {
+            color: #555;
+            font-size: 0.9em;
+            line-height: 1.6;
         }
 
         .footer {
-            margin-top: 60px;
+            background: #f8f9fa;
+            padding: 25px;
             text-align: center;
-            color: #94a3b8;
-            padding: 40px 0 10px;
+            color: #666;
+            font-size: 0.9em;
+            border-top: 1px solid #e0e0e0;
         }
 
-        .footer a {
-            color: #60a5fa;
+        .highlight {
+            background: #fff3cd;
+            padding: 2px 6px;
+            border-radius: 3px;
         }
 
-        @media (max-width: 960px) {
-
-            .hero-inner,
-            .about-grid,
-            .projects-grid,
-            .experience-grid,
-            .hero-meta,
-            .skill-grid {
-                grid-template-columns: 1fr;
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 1.8em;
             }
 
-            .hero {
-                min-height: auto;
-                padding-top: 32px;
+            .job-header {
+                flex-direction: column;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .content {
+                padding: 25px;
             }
         }
 
-        @media (max-width: 640px) {
-            .page {
-                padding: 0 16px 40px;
+        .badge {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            margin-right: 8px;
+            margin-top: 8px;
+        }
+
+        .badge-highlight {
+            background: #764ba2;
+        }
+
+        @print {
+            body {
+                background: white;
             }
 
-            .hero-copy h1 {
-                font-size: 2.5rem;
-            }
-
-            .btn {
-                width: 100%;
+            .container {
+                box-shadow: none;
             }
         }
     </style>
 </head>
 
 <body>
-    <div class="page">
-        <section class="hero" id="hero">
-            <div class="hero-inner">
-                <div class="hero-copy">
-                    <p class="eyebrow">Specialist Automation Engineer</p>
-                    <h1>Shriniwas Alle</h1>
-                    <p>
-                        I design and deliver automation systems, intelligent workflows, and infrastructure solutions
-                        that help engineering teams move faster and operate with confidence.
-                    </p>
-                    <div class="hero-actions">
-                        <a href="#projects" class="btn btn-primary">View My Work</a>
-                        <a href="mailto:hello@shriniwasalle.com" class="btn btn-secondary">Let's Connect</a>
-                    </div>
-                    <div class="hero-stats">
-                        <div class="stat">
-                            <strong>8+</strong>
-                            <span>Years Experience</span>
-                        </div>
-                        <div class="stat">
-                            <strong>90%</strong>
-                            <span>Automation Coverage</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="hero-card">
-                    <h3>What I bring</h3>
-                    <p>
-                        Practical automation leadership across software quality, deployment pipelines, testing
-                        infrastructure, and operations monitoring. I focus on reliable execution, repeatability, and
-                        measurable outcomes.
-                    </p>
-                    <div class="tags">
-                        <span class="tag">CI/CD</span>
-                        <span class="tag">Infrastructure as Code</span>
-                        <span class="tag">Test Automation</span>
-                        <span class="tag">Observability</span>
-                    </div>
-                </div>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1>SHRINIWAS ALLE</h1>
+            <div class="title">Senior QA Engineer II</div>
+            <div class="contact-info">
+                <a href="tel:+918698556642">📞 +91 8698556642</a>
+                <a href="mailto:shriniwasalle4@gmail.com">✉️ shriniwasalle4@gmail.com</a>
+                <a href="https://www.linkedin.com/in/shriniwas-alle-22080a202/" target="_blank">🔗 LinkedIn</a>
+                <span>📍 Pune, Maharashtra, India</span>
             </div>
-        </section>
+        </div>
 
-        <section class="section" id="about">
-            <div class="section-title">01. About</div>
-            <h2 class="section-heading">Engineering automation with clarity, scale, and confidence.</h2>
-            <p class="section-copy">
-                I am a Specialist Automation Engineer focused on building end-to-end solutions for enterprise teams. My
-                work spans automation strategy, quality engineering, deployment orchestration, and cloud-native
-                reliability.
-            </p>
-            <div class="about-grid">
-                <div class="about-panel">
-                    <div class="panel-card">
-                        <h3>Core strengths</h3>
-                        <ul>
-                            <li>Designing resilient automation pipelines for software delivery and operations.</li>
-                            <li>Implementing CI/CD, test suites, and release automation that reduce cycle time.</li>
-                            <li>Creating production-ready observability and incident response workflows.</li>
-                            <li>Bridging engineering teams, product goals, and operational readiness.</li>
-                        </ul>
-                    </div>
-                    <div class="panel-card">
-                        <h3>Current focus</h3>
-                        <ul>
-                            <li>Automating cloud deployments with Azure and container platforms.</li>
-                            <li>Building reusable frameworks for test automation and validation.</li>
-                            <li>Improving developer velocity through process automation.</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="panel-card">
-                    <h3>Highlights</h3>
-                    <div class="tags">
-                        <span class="tag">Azure</span>
-                        <span class="tag">GitHub Actions</span>
-                        <span class="tag">Docker</span>
-                        <span class="tag">Selenium</span>
-                        <span class="tag">PowerShell</span>
-                        <span class="tag">Monitoring</span>
-                    </div>
-                    <p>
-                        I partner with engineering teams to deliver automation that is not only functional but also
-                        maintainable, auditable, and aligned with business outcomes.
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <section class="section" id="skills">
-            <div class="section-title">02. Skills</div>
-            <h2 class="section-heading">A practical toolset for automation, infrastructure, and delivery.</h2>
-            <p class="section-copy">
-                The skills I use daily combine infrastructure, testing, and process automation with a strong emphasis on
-                reliability and developer experience.
-            </p>
-            <div class="skill-grid">
-                <div class="skill-card">
-                    <h3>Automation & Testing</h3>
-                    <p>Test frameworks, scripting, and validation automation for large-scale applications and
-                        integration workflows.</p>
-                    <ul class="skill-list">
-                        <li>Selenium / Playwright</li>
-                        <li>PowerShell / Bash</li>
-                        <li>Postman / API validation</li>
-                    </ul>
-                </div>
-                <div class="skill-card">
-                    <h3>Cloud & DevOps</h3>
-                    <p>Deployment automation, infrastructure as code, and platform reliability across cloud-native
-                        stacks.</p>
-                    <ul class="skill-list">
-                        <li>Azure DevOps</li>
-                        <li>GitHub Actions</li>
-                        <li>Docker / Kubernetes</li>
-                    </ul>
-                </div>
-                <div class="skill-card">
-                    <h3>Engineering Systems</h3>
-                    <p>Operational tooling, observability, and release coordination to keep high-performance teams in
-                        control.</p>
-                    <ul class="skill-list">
-                        <li>Prometheus / Grafana</li>
-                        <li>Log analytics</li>
-                        <li>Release gating</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <section class="section" id="projects">
-            <div class="section-title">03. Projects</div>
-            <h2 class="section-heading">Featured automation systems and delivery wins.</h2>
-            <p class="section-copy">
-                Selected work that demonstrates how automation can boost release quality, reduce manual effort, and make
-                engineering operations more predictable.
-            </p>
-            <div class="projects-grid">
-                <article class="project-card">
-                    <small>Production</small>
-                    <h3>End-to-end CI/CD pipeline automation</h3>
-                    <p>Designed a complete build, test, and deployment pipeline with Azure DevOps, containerization, and
-                        automated rollbacks for a multi-service platform.</p>
-                    <div class="badge"><span>CI/CD</span><span>Automated Deployments</span></div>
-                </article>
-                <article class="project-card">
-                    <small>Impact</small>
-                    <h3>Automated regression and smoke testing</h3>
-                    <p>Built a reusable automation suite that reduced release validation time by 60% and caught issues
-                        earlier in the delivery cycle.</p>
-                    <div class="badge"><span>Test Automation</span><span>Quality</span></div>
-                </article>
-                <article class="project-card">
-                    <small>Platform</small>
-                    <h3>Infrastructure-as-Code deployment framework</h3>
-                    <p>Implemented reusable Azure infrastructure templates and deployment workflows to accelerate
-                        environment provisioning and enforce consistency.</p>
-                    <div class="badge"><span>IaC</span><span>Repeatability</span></div>
-                </article>
-            </div>
-        </section>
-
-        <section class="section" id="experience">
-            <div class="section-title">04. Experience</div>
-            <h2 class="section-heading">Delivering automation at scale across teams and systems.</h2>
-            <p class="section-copy">
-                My experience spans automation consulting, engineering operations, and delivery lifecycle management for
-                enterprise-grade initiatives.
-            </p>
-            <div class="experience-grid">
-                <div class="experience-card">
-                    <h3>Specialist Automation Engineer</h3>
-                    <small>Current role</small>
-                    <p>Leading automation efforts for release delivery, test orchestration, and cloud deployment
-                        practices in enterprise environments.</p>
+        <!-- Content -->
+        <div class="content">
+            <!-- Profile Section -->
+            <section class="section">
+                <h2 class="section-title">Professional Profile</h2>
+                <div class="profile-section">
                     <ul>
-                        <li>Created end-to-end pipelines for builds, tests, and production deployment.</li>
-                        <li>Automated validation and monitoring to minimize operational risk.</li>
-                        <li>Enabled clear release metrics and faster team feedback loops.</li>
+                        <li><span class="highlight">9+ years of automation experience</span> specializing in Playwright
+                            and Selenium WebDriver</li>
+                        <li>Proficient in creating, planning, and estimating test cases with strong understanding of
+                            Agile methodologies</li>
+                        <li>Expertise in <span class="highlight">Playwright with Typescript</span> and <span
+                                class="highlight">Selenium with Java</span></li>
+                        <li>Contributed in developing automation framework from scratch and leading framework migrations
+                        </li>
+                        <li>Extensive experience in Regression, Functional, Integration, and System testing</li>
+                        <li>Effective collaborator with cross-functional teams and proven DevOps CI/CD pipeline
+                            expertise</li>
+                        <li>Strong analytical and problem-solving skills with excellent documentation abilities</li>
+                        <li>Proven team player with mentoring experience and solution-oriented mindset</li>
                     </ul>
                 </div>
-                <div class="experience-card">
-                    <h3>Engineering Operations Lead</h3>
-                    <small>Previous role</small>
-                    <p>Coordinated platform reliability, release readiness, and tooling improvements for multi-team
-                        delivery.</p>
-                    <ul>
-                        <li>Streamlined environment provisioning with scripts and templates.</li>
-                        <li>Built dashboards and alerts for application health and deployment status.</li>
-                        <li>Reduced incident response time through runbook automation.</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
+            </section>
 
-        <section class="section" id="education">
-            <div class="section-title">05. Education</div>
-            <h2 class="section-heading">Formal qualifications and learning milestones.</h2>
-            <div class="about-grid" style="grid-template-columns: 1fr; gap: 20px; margin-top: 32px;">
-                <div class="panel-card">
-                    <h3>Bachelor of Engineering — Information Technology</h3>
-                    <p>GSM College of Engineering, Pune</p>
-                    <p>Graduated: 2022</p>
+            <!-- Technical Skills -->
+            <section class="section">
+                <h2 class="section-title">Technical Skills</h2>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h3>🔧 Programming Languages</h3>
+                        <p>Core Java • Typescript • Javascript</p>
+                    </div>
+                    <div class="skill-category">
+                        <h3>🎯 Testing Frameworks</h3>
+                        <p>Playwright • Selenium WebDriver • Cucumber • TestNG</p>
+                    </div>
+                    <div class="skill-category">
+                        <h3>🔌 API Testing Tools</h3>
+                        <p>RestAssured • Postman • Insomnia • Soap UI</p>
+                    </div>
+                    <div class="skill-category">
+                        <h3>🚀 CI/CD & DevOps</h3>
+                        <p>GitHub Actions • Jenkins • GitLab CI • Bamboo</p>
+                    </div>
+                    <div class="skill-category">
+                        <h3>☁️ Cloud Platforms</h3>
+                        <p>MS Azure • AWS (Cloudwatch, S3) • Azure Static Web Apps</p>
+                    </div>
+                    <div class="skill-category">
+                        <h3>📊 Databases</h3>
+                        <p>MySQL • Oracle • SQL Server • DB Unit</p>
+                    </div>
+                    <div class="skill-category">
+                        <h3>🛠️ Build Tools</h3>
+                        <p>Maven • NPM • Gradle</p>
+                    </div>
+                    <div class="skill-category">
+                        <h3>💻 Operating Systems</h3>
+                        <p>Windows • macOS • Linux</p>
+                    </div>
+                    <div class="skill-category">
+                        <h3>📚 Other Tools</h3>
+                        <p>JIRA • Grafana • React Library • DB Unit</p>
+                    </div>
                 </div>
-                <div class="panel-card">
-                    <h3>Certifications</h3>
-                    <ul class="skill-list">
-                        <li>Automation Engineering Fundamentals</li>
-                        <li>Azure DevOps Practitioner</li>
-                        <li>Test Automation Specialist</li>
+            </section>
+
+            <!-- Work Experience -->
+            <section class="section">
+                <h2 class="section-title">Work Experience</h2>
+
+                <div class="experience-item">
+                    <div class="job-header">
+                        <div>
+                            <div class="job-title">Sr QA Engineer</div>
+                            <div class="company">Cybage Software, Pune</div>
+                        </div>
+                        <div class="date">AUG 2023 - PRESENT</div>
+                    </div>
+                    <div class="project-info"><strong>Project:</strong> Booking.com (Rental Cars)</div>
+                    <div class="tech-stack"><strong>Tech Stack:</strong> Selenium WebDriver, TestNG, Maven, Jenkins,
+                        JIRA, Bamboo, AWS Cloudwatch, AWS S3, Postman, Rest Assured, Grafana</div>
+                    <ul class="job-description">
+                        <li>Leading automation testing for global booking platform with millions of users</li>
+                        <li>Designing and implementing comprehensive test automation strategies</li>
+                        <li>Collaborating with cross-functional teams to ensure quality at scale</li>
                     </ul>
                 </div>
-            </div>
-        </section>
 
-        <footer class="footer" id="contact">
-            <p>Ready to collaborate on automation, delivery, or cloud operations?</p>
-            <p><a href="mailto:hello@shriniwasalle.com">hello@shriniwasalle.com</a></p>
-        </footer>
+                <div class="experience-item">
+                    <div class="job-header">
+                        <div>
+                            <div class="job-title">SR. QA Engineer - II</div>
+                            <div class="company">Microsoft + Nuance Communications, Pune</div>
+                        </div>
+                        <div class="date">MAR 2021 - JUL 2023</div>
+                    </div>
+                    <div class="project-info"><strong>Project:</strong> Nuance Console (BL, PT, IVR Apps)</div>
+                    <div class="tech-stack"><strong>Tech Stack:</strong> Playwright, Typescript, Cucumber, GitHub
+                        Actions, Azure Static Web Apps, React Library</div>
+                    <ul class="job-description">
+                        <li>Created a Playwright test automation framework from scratch with best practices</li>
+                        <li>Orchestrated migration of Selenium automation framework to Playwright, improving test speed
+                            by 40%</li>
+                        <li>Set up robust automation pipeline using GitHub Actions for continuous testing</li>
+                        <li>Mentored manual QA team members on automation, providing hands-on training and support</li>
+                        <li>Implemented flexible report generation using Azure Static Web App and Azure Secrets</li>
+                        <li>Led automation tasks, worked closely with QA team, and provided accurate estimates to
+                            management</li>
+                        <li>Collaborated with developers in Agile sprints and automated tickets for smoother processes
+                        </li>
+                        <li>Identified, reported, and assisted in fixing production bugs</li>
+                        <li>Developed features and fixed production issues using React library</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <div class="job-header">
+                        <div>
+                            <div class="job-title">Consultant - QA & Automation SPOC</div>
+                            <div class="company">Bristlecone India Ltd, Pune</div>
+                        </div>
+                        <div class="date">FEB 2017 - DEC 2018</div>
+                    </div>
+                    <div class="project-info"><strong>Project:</strong> Data Center (DC4)</div>
+                    <div class="tech-stack"><strong>Tech Stack:</strong> Selenium WebDriver, TestNG, JIRA</div>
+                    <ul class="job-description">
+                        <li>Worked as Automation QA and contributed to framework enhancement</li>
+                        <li>Maintained automation scripts and automated new features and regression test cases</li>
+                        <li>Served as Automation SPOC, mentoring QA team members</li>
+                        <li>Collaborated with DevOps for Continuous Testing Environments</li>
+                        <li>Facilitated knowledge transfer to new resources and other teams</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <div class="job-header">
+                        <div>
+                            <div class="job-title">EDI Test Analyst</div>
+                            <div class="company">Santeon India Ltd, Pune</div>
+                        </div>
+                        <div class="date">JUN 2015 - JAN 2017</div>
+                    </div>
+                    <div class="project-info"><strong>Project:</strong> Benefits Network Portal</div>
+                    <div class="tech-stack"><strong>Tech Stack:</strong> Manual Testing, Java, Selenium, MySQL</div>
+                    <ul class="job-description">
+                        <li>Performed manual and automation testing of applications</li>
+                        <li>Wrote comprehensive test specifications, plans, scenarios, and test cases</li>
+                        <li>Performed business analyst duties including requirements gathering and mapping</li>
+                        <li>Managed EDI-based transactions and system configuration</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Achievements -->
+            <section class="section">
+                <h2 class="section-title">Awards & Recognition</h2>
+                <div class="achievements">
+                    <div class="achievement-card">
+                        <h3>🌟 Spot Recognition Award</h3>
+                        <p><strong>Nuance Communications</strong></p>
+                        <p>Awarded for commitment and dedication shown towards work for completing the release
+                            successfully without any production issue.</p>
+                    </div>
+                    <div class="achievement-card">
+                        <h3>🏆 Values Award</h3>
+                        <p><strong>Nuance Communications</strong></p>
+                        <p>Recognized for writing script for fetching Azure logs and preparing reports to send to
+                            customer daily.</p>
+                    </div>
+                    <div class="achievement-card">
+                        <h3>👏 Client Appreciation</h3>
+                        <p><strong>Industry Recognition</strong></p>
+                        <p>Got appreciated by clients for bringing up suggestions for continuous improvement in business
+                            requirements.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Additional Skills -->
+            <section class="section">
+                <h2 class="section-title">Soft Skills & Competencies</h2>
+                <div class="additional-skills">
+                    <div class="skill-box">
+                        <h3>🔄 Adaptability</h3>
+                        <p>Ability to pivot and find alternate solutions when things don't go as planned. Flexible
+                            problem-solving approach in dynamic environments.</p>
+                    </div>
+                    <div class="skill-box">
+                        <h3>💬 Communication</h3>
+                        <p>Proficient in communicating with clients and internally with team members. Strong
+                            presentation and documentation skills.</p>
+                    </div>
+                    <div class="skill-box">
+                        <h3>⚡ Multi-tasking</h3>
+                        <p>Handled several projects simultaneously while meeting deadlines and managing relationships
+                            with clients and colleagues.</p>
+                    </div>
+                    <div class="skill-box">
+                        <h3>👥 Team Leadership</h3>
+                        <p>Mentored QA team members as Automation SPOC. Collaborated with DevOps and cross-functional
+                            teams for Continuous Testing.</p>
+                    </div>
+                    <div class="skill-box">
+                        <h3>🎓 Knowledge Transfer</h3>
+                        <p>Facilitated onboarding and knowledge transfer to new resources. Provided hands-on training
+                            sessions for automation.</p>
+                    </div>
+                    <div class="skill-box">
+                        <h3>🎯 Problem Solving</h3>
+                        <p>Strong analytical and problem-solving skills. Solution-oriented mindset with focus on
+                            continuous improvement.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Education -->
+            <section class="section">
+                <h2 class="section-title">Education</h2>
+                <div class="education">
+                    <h3>B.E. (Information Technology)</h3>
+                    <p><strong>Shivaji University</strong></p>
+                    <p>📅 2009 - 2013</p>
+                </div>
+            </section>
+
+            <!-- Key Highlights -->
+            <section class="section">
+                <h2 class="section-title">Key Highlights</h2>
+                <div style="background: #f0f4ff; padding: 25px; border-radius: 8px; border-left: 4px solid #667eea;">
+                    <p style="margin-bottom: 15px; color: #333;">
+                        <strong>Framework Development:</strong>
+                        <span class="badge">Playwright Framework</span>
+                        <span class="badge">Selenium Framework</span>
+                        <span class="badge">CI/CD Integration</span>
+                    </p>
+                    <p style="margin-bottom: 15px; color: #333;">
+                        <strong>Leadership & Mentoring:</strong>
+                        <span class="badge badge-highlight">Team Mentoring</span>
+                        <span class="badge badge-highlight">Automation SPOC</span>
+                        <span class="badge badge-highlight">Framework Migration Lead</span>
+                    </p>
+                    <p style="margin-bottom: 15px; color: #333;">
+                        <strong>DevOps & Cloud:</strong>
+                        <span class="badge">GitHub Actions</span>
+                        <span class="badge">Azure Platform</span>
+                        <span class="badge">AWS Services</span>
+                        <span class="badge">Jenkins Pipeline</span>
+                    </p>
+                    <p style="color: #333;">
+                        <strong>Project Experience:</strong>
+                        <span class="badge">Booking.com</span>
+                        <span class="badge">Microsoft Nuance</span>
+                        <span class="badge">Global Scale Applications</span>
+                    </p>
+                </div>
+            </section>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p>© 2025 Shriniwas Alle | Senior QA Engineer II</p>
+            <p style="margin-top: 10px;">This resume is created using modern web technologies and is responsive across
+                all devices.</p>
+        </div>
     </div>
 </body>
-
 
 </html>
