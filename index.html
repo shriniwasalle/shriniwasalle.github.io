@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shriniwas Alle - Senior QA Engineer II</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+
+        .header .title {
+            font-size: 1.3em;
+            font-weight: 300;
+            margin-bottom: 20px;
+            border-bottom: 2px solid rgba(255,255,255,0.3);
+            padding-bottom: 15px;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            font-size: 0.95em;
+        }
+
+        .contact-info a {
+            color: #fff;
+            text-decoration: none;
+            transition: opacity 0.3s;
+        }
+
+        .contact-info a:hover {
+            opacity: 0.8;
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        .section-title {
+            font-size: 1.8em;
+            color: #1e3c72;
+            margin-bottom: 25px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #667eea;
+            font-weight: 600;
+        }
+
+        .profile-section {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+        }
+
+        .profile-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .profile-section li {
+            margin-bottom: 12px;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .profile-section li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #667eea;
+            font-weight: bold;
+        }
+
+        .experience-item {
+            margin-bottom: 30px;
+            padding-bottom: 25px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .experience-item:last-child {
+            border-bottom: none;
+        }
+
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 10px;
+            flex-wrap: wrap;
+        }
+
+        .job-title {
+            font-size: 1.2em;
+            font-weight: 600;
+            color: #1e3c72;
+        }
+
+        .company {
+            color: #667eea;
+            font-weight: 500;
+        }
+
+        .date {
+            color: #666;
+            font-size: 0.95em;
+            font-style: italic;
+        }
+
+        .project-info {
+            margin: 12px 0;
+            color: #555;
+        }
+
+        .tech-stack {
+            color: #764ba2;
+            font-size: 0.9em;
+            margin: 8px 0;
+        }
+
+        .job-description {
+            list-style: none;
+            padding: 15px 0;
+        }
+
+        .job-description li {
+            margin-bottom: 8px;
+            padding-left: 20px;
+            position: relative;
+            color: #555;
+        }
+
+        .job-description li:before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: #667eea;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .skill-category {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+        }
+
+        .skill-category h3 {
+            color: #1e3c72;
+            margin-bottom: 12px;
+            font-size: 1em;
+        }
+
+        .skill-category p {
+            color: #555;
+            font-size: 0.9em;
+            line-height: 1.8;
+        }
+
+        .achievements {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .achievement-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.2);
+        }
+
+        .achievement-card h3 {
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+
+        .education {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+        }
+
+        .education h3 {
+            color: #1e3c72;
+            margin-bottom: 8px;
+        }
+
+        .education p {
+            color: #666;
+            margin: 5px 0;
+        }
+
+        .additional-skills {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .skill-box {
+            background: white;
+            border: 2px solid #e0e0e0;
+            padding: 20px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .skill-box:hover {
+            border-color: #667eea;
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.1);
+        }
+
+        .skill-box h3 {
+            color: #1e3c72;
+            margin-bottom: 10px;
+            font-size: 1.05em;
+        }
+
+        .skill-box p {
+            color: #555;
+            font-size: 0.9em;
+            line-height: 1.6;
+        }
+
+        .footer {
+            background: #f8f9fa;
+            padding: 25px;
+            text-align: center;
+            color: #666;
+            font-size: 0.9em;
+            border-top: 1px solid #e0e0e0;
+        }
+
+        .highlight {
+            background: #fff3cd;
+            padding: 2px 6px;
+            border-radius: 3px;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 1.8em;
+            }
+
+            .job-header {
+                flex-direction: column;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .content {
+                padding: 25px;
+            }
+        }
+
+        .badge {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            margin-right: 8px;
+            margin-top: 8px;
+        }
+
+        .badge-highlight {
+            background: #764ba2;
+        }
+
+        @print {
+            body {
+                background: white;
+            }
+
+            .container {
+                box-shadow: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1>SHRINIWAS ALLE</h1>
+            <div class="title">Senior QA Engineer II</div>
+            <div class="contact-info">
+                <a href="tel:+918698556642">📞 +91 8698556642</a>
+                <a href="mailto:shriniwasalle4@gmail.com">✉️ shriniwasalle4@gmail.com</a>
+                <a href="https://www.linkedin.com/in/shriniwas-alle-22080a202/" target="_blank">🔗 LinkedIn</a>
+                <span>📍 Pune, Maharashtra, India</span>
+            </div>
+        </div>
+
+        <!-- Content -->
+        <div class="content">
+            <!-- Profile Section -->
+            <section class="section">
+                <h2 class="section-title">Professional Profile</h2>
+                <div class="profile-section">
+                    <ul>
+                        <li><span class="highlight">9+ years of automation experience</span> specializing in Playwright and Selenium WebDriver</li>
+                        <li>Proficient in creating, planning, and estimating test cases with strong understanding of Agile methodologies</li>
+                        <li>Expertise in <span class="highlight">Playwright with Typescript</span> and <span class="highlight">Selenium with Java</span></li>
+                        <li>Contributed in developing automation framework from scratch and leading framework migrations</li>
+                        <li>Extensive experience in Regression, Functional, Integration, and System testing</li>
+                        <li>Effective collaborator with cross-functional teams and proven DevOps CI/CD pipeline expertise</li>
+                        <li>Strong analytical and problem-solving skills with excellent documentation abilities</li>
+                        <li>Proven team player with mentoring experience and solution-oriented mindset</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Work Experience -->
+            <section class="section">
+                <h2 class="section-title">Work Experience</h2>
+
+                <div class="experience-item">
+                    <div class="job-header">
+                        <div>
+                            <div class="job-title">Sr QA Engineer</div>
+                            <div class="company">Cybage Software, Pune</div>
+                        </div>
+                        <div class="date">AUG 2023 - PRESENT</div>
+                    </div>
+                    <div class="project-info"><strong>Project:</strong> Booking.com (Rental Cars)</div>
+                    <div class="tech-stack"><strong>Tech Stack:</strong> Selenium WebDriver, TestNG, Maven, Jenkins, JIRA, Bamboo, AWS Cloudwatch, AWS S3, Postman, Rest Assured, Grafana</div>
+                    <ul class="job-description">
+                        <li>Leading automation testing for global booking platform with millions of users</li>
+                        <li>Designing and implementing comprehensive test automation strategies</li>
+                        <li>Collaborating with cross-functional teams to ensure quality at scale</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <div class="job-header">
+                        <div>
+                            <div class="job-title">SR. QA Engineer - II</div>
+                            <div class="company">Microsoft + Nuance Communications, Pune</div>
+                        </div>
+                        <div class="date">MAR 2021 - JUL 2023</div>
+                    </div>
+                    <div class="project-info"><strong>Project:</strong> Nuance Console (BL, PT, IVR Apps)</div>
+                    <div class="tech-stack"><strong>Tech Stack:</strong> Playwright, Typescript, Cucumber, GitHub Actions, Azure Static Web Apps, React Library</div>
+                    <ul class="job-description">
+                        <li>Created a Playwright test automation framework from scratch with best practices</li>
+                        <li>Orchestrated migration of Selenium automation framework to Playwright, improving test speed by 40%</li>
+                        <li>Set up robust automation pipeline using GitHub Actions for continuous testing</li>
+                        <li>Mentored manual QA team members on automation, providing hands-on training and support</li>
+                        <li>Implemented flexible report generation using Azure Static Web App and Azure Secrets</li>
+                        <li>Led automation tasks, worked closely with QA team, and provided accurate estimates to management</li>
+                        <li>Collaborated with developers in Agile sprints and automated tickets for smoother processes</li>
+                        <li>Identified, reported, and assisted in fixing production bugs</li>
+                        <li>Developed features and fixed production issues using React library</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <div class="job-header">
+                        <div>
+                            <div class="job-title">Consultant - QA & Automation SPOC</div>
+                            <div class="company">Bristlecone India Ltd, Pune</div>
+                        </div>
+                        <div class="date">FEB 2017 - DEC 2018</div>
+                    </div>
+                    <div class="project-info"><strong>Project:</strong> Data Center (DC4)</div>
+                    <div class="tech-stack"><strong>Tech Stack:</strong> Selenium WebDriver, TestNG, JIRA</div>
+                    <ul class="job-description">
+                        <li>Worked as Automation QA and contributed to framework enhancement</li>
+                        <li>Maintained automation scripts and automated new features and regression test cases</li>
+                        <li>Served as Automation SPOC, mentoring QA team members</li>
+                        <li>Collaborated with DevOps for Continuous Testing Environments</li>
+                        <li>Facilitated knowledge transfer to new resources and other teams</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <div class="job-header">
+                        <div>
+                            <div class="job-title">EDI Test Analyst</div>
+                            <div class="company">Santeon India Ltd, Pune</div>
+                        </div>
+                        <div class="date">JUN 2015 - JAN 2017</div>
+                    </div>
+                    <div class="project-info"><strong>Project:</strong> Benefits Network Portal</div>
+                    <div class="tech-stack"><strong>Tech Stack:</strong> Manual Testing, Java, Selenium, MySQL</div>
+                    <ul class="job-description">
+                        <li>Performed manual and automation testing of applications</li>
+                        <li>Wrote comprehensive test specifications, plans, scenarios, and test cases</li>
+                        <li>Performed business analyst duties including requirements gathering and mapping</li>
+                        <li>Managed EDI-based transactions and system configuration</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Technical Skills -->
+            <section class="section">
+                <h2 class="section-title">Technical Skills</h2>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h3>🔧 Programming Languages</h3>
+                        <p>Core Java • Typescript • Javascript</p>
+                    </div>
+                    <div class="skill-category">
+                        <h3>🎯 Testing Frameworks</h3>
+                        <p>Playwright • Selenium WebDriver • Cucumber • TestNG</p>
+                    </div>
+                    <div class="skill-category">
+                        <h3>🔌 API Testing Tools</h3>
+                        <p>RestAssured • Postman • Insomnia • Soap UI</p>
+                    </div>
+                    <div class="skill-category">
+                        <h3>🚀 CI/CD & DevOps</h3>
+                        <p>GitHub Actions • Jenkins • GitLab CI • Bamboo</p>
+                    </div>
+                    <div class="skill-category">
+                        <h3>☁️ Cloud Platforms</h3>
+                        <p>MS Azure • AWS (Cloudwatch, S3) • Azure Static Web Apps</p>
+                    </div>
+                    <div class="skill-category">
+                        <h3>📊 Databases</h3>
+                        <p>MySQL • Oracle • SQL Server • DB Unit</p>
+                    </div>
+                    <div class="skill-category">
+                        <h3>🛠️ Build Tools</h3>
+                        <p>Maven • NPM • Gradle</p>
+                    </div>
+                    <div class="skill-category">
+                        <h3>💻 Operating Systems</h3>
+                        <p>Windows • macOS • Linux</p>
+                    </div>
+                    <div class="skill-category">
+                        <h3>📚 Other Tools</h3>
+                        <p>JIRA • Grafana • React Library • DB Unit</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Achievements -->
+            <section class="section">
+                <h2 class="section-title">Awards & Recognition</h2>
+                <div class="achievements">
+                    <div class="achievement-card">
+                        <h3>🌟 Spot Recognition Award</h3>
+                        <p><strong>Nuance Communications</strong></p>
+                        <p>Awarded for commitment and dedication shown towards work for completing the release successfully without any production issue.</p>
+                    </div>
+                    <div class="achievement-card">
+                        <h3>🏆 Values Award</h3>
+                        <p><strong>Nuance Communications</strong></p>
+                        <p>Recognized for writing script for fetching Azure logs and preparing reports to send to customer daily.</p>
+                    </div>
+                    <div class="achievement-card">
+                        <h3>👏 Client Appreciation</h3>
+                        <p><strong>Industry Recognition</strong></p>
+                        <p>Got appreciated by clients for bringing up suggestions for continuous improvement in business requirements.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Additional Skills -->
+            <section class="section">
+                <h2 class="section-title">Soft Skills & Competencies</h2>
+                <div class="additional-skills">
+                    <div class="skill-box">
+                        <h3>🔄 Adaptability</h3>
+                        <p>Ability to pivot and find alternate solutions when things don't go as planned. Flexible problem-solving approach in dynamic environments.</p>
+                    </div>
+                    <div class="skill-box">
+                        <h3>💬 Communication</h3>
+                        <p>Proficient in communicating with clients and internally with team members. Strong presentation and documentation skills.</p>
+                    </div>
+                    <div class="skill-box">
+                        <h3>⚡ Multi-tasking</h3>
+                        <p>Handled several projects simultaneously while meeting deadlines and managing relationships with clients and colleagues.</p>
+                    </div>
+                    <div class="skill-box">
+                        <h3>👥 Team Leadership</h3>
+                        <p>Mentored QA team members as Automation SPOC. Collaborated with DevOps and cross-functional teams for Continuous Testing.</p>
+                    </div>
+                    <div class="skill-box">
+                        <h3>🎓 Knowledge Transfer</h3>
+                        <p>Facilitated onboarding and knowledge transfer to new resources. Provided hands-on training sessions for automation.</p>
+                    </div>
+                    <div class="skill-box">
+                        <h3>🎯 Problem Solving</h3>
+                        <p>Strong analytical and problem-solving skills. Solution-oriented mindset with focus on continuous improvement.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Education -->
+            <section class="section">
+                <h2 class="section-title">Education</h2>
+                <div class="education">
+                    <h3>B.E. (Information Technology)</h3>
+                    <p><strong>Shivaji University</strong></p>
+                    <p>📅 2009 - 2013</p>
+                </div>
+            </section>
+
+            <!-- Key Highlights -->
+            <section class="section">
+                <h2 class="section-title">Key Highlights</h2>
+                <div style="background: #f0f4ff; padding: 25px; border-radius: 8px; border-left: 4px solid #667eea;">
+                    <p style="margin-bottom: 15px; color: #333;">
+                        <strong>Framework Development:</strong> 
+                        <span class="badge">Playwright Framework</span>
+                        <span class="badge">Selenium Framework</span>
+                        <span class="badge">CI/CD Integration</span>
+                    </p>
+                    <p style="margin-bottom: 15px; color: #333;">
+                        <strong>Leadership & Mentoring:</strong> 
+                        <span class="badge badge-highlight">Team Mentoring</span>
+                        <span class="badge badge-highlight">Automation SPOC</span>
+                        <span class="badge badge-highlight">Framework Migration Lead</span>
+                    </p>
+                    <p style="margin-bottom: 15px; color: #333;">
+                        <strong>DevOps & Cloud:</strong> 
+                        <span class="badge">GitHub Actions</span>
+                        <span class="badge">Azure Platform</span>
+                        <span class="badge">AWS Services</span>
+                        <span class="badge">Jenkins Pipeline</span>
+                    </p>
+                    <p style="color: #333;">
+                        <strong>Project Experience:</strong> 
+                        <span class="badge">Booking.com</span>
+                        <span class="badge">Microsoft Nuance</span>
+                        <span class="badge">Global Scale Applications</span>
+                    </p>
+                </div>
+            </section>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p>© 2025 Shriniwas Alle | Senior QA Engineer II</p>
+            <p style="margin-top: 10px;">This resume is created using modern web technologies and is responsive across all devices.</p>
+        </div>
+    </div>
+</body>
+</html>
